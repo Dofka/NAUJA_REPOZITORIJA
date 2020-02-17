@@ -2,7 +2,7 @@
 
 ## v0.1
 
-!
+![Versijos v0.1 pavyzdys](2uzd.png)
 
 Ši programa įvedus mokinių skaičių paprašo ar norėsi skaičiuoti pagal medianą ar pagal namų darbus. Tada paprašo vardo ir pavardės. Po to vartotojas pasirenka ar nori random rezultatų ar paties įvestų. Tada pagal pasirinkimą arba veda rezultatus: egzamino ir namų darbų. 
 
