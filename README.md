@@ -11,3 +11,11 @@ Tada Galutini balą apskaičiuoja pagal formulę: Galutinis balas = 0.4 * Vidurk
 Programa sukurta buvo naudojant vienoje versijoje masyvus kitoje vektorius
 
 Ši programa atsižvelgia ar vartotojas teisingai įveda skaičius ar tai nėra raidės ir pnš. Žiūri, kad skaičiai nebūtų po kablelio, neperžengtų ribų. 
+
+## v0.2 
+
+Šioje versijoje galima pasirinkti ar duomenys būtų skaitomi iš failo, kuris yra tame pačiame folderyje arba duomenys yra įvedami ranka, kaip versijoje v0.1.
+
+## v0.3
+
+Šitoje versijoje funkcijos perkeltos į headeri ir pridėti exceptionai
