@@ -23,3 +23,11 @@ Programa sukurta buvo naudojant vienoje versijoje masyvus kitoje vektorius
 ## v0.4
 
 Šitoje versijoje pati programa atsitiktine tvarka sukuria studentų sąrašus: 1000, 10000, 100000, 1000000, 10000000; Jiems yra sukurti ir atsitiktine tvarka sudaryti pažymiai bei egzaminų įvertinimai. Prie šios versijos yra pridėtas ir kiekvienos atliekamos procedūros, jos veikimo laikas. Bei apskaičiuojamas bendras laikas, darbo su failu.
+
+## v0.5
+
+![v0.5 Palyginimui darbas su vektoriais](vektoriai.png)
+
+![v0.5 Palyginimui darbas su deque](deque.png)
+
+![v0.5 Palyginimui darbas su list](List.png)
