@@ -26,8 +26,19 @@ Programa sukurta buvo naudojant vienoje versijoje masyvus kitoje vektorius
 
 ## v0.5
 
+Šioje versijoje testuojame įvairius konteinerius ir žiūrime su kuriais darbas bus atliktas greičiausiai. Kodas panaudotas ir pakoreaguotas versijos v0.4. Kompiuterio parametrai: procesorius - Intel i7-8750H, 16GB RAM, KXG60ZNV512G NVMe TOSHIBA 512GB.
+
+### Darbas su vektoriais
 ![v0.5 Palyginimui darbas su vektoriais](vektoriai.png)
 
+Kai programa naudoja vektorių konteinerį, ji skaito failus greičiau nei List konteineris, bet duomenis skirsto į dvi grupes lėčiau.
+
+### Darbas su deque
 ![v0.5 Palyginimui darbas su deque](deque.png)
 
+Kai programa naudoja deque konteinerį, šis konteineris dirba lėčiausiai iš visų naudojamų.
+
+### Darbas su list
 ![v0.5 Palyginimui darbas su list](List.png)
+
+Kai programa naudoja List konteinerį, ji skaito failus lėčiau nei vektor konteineris, bet duomenis skirsto į dvi grupes greičiau.
