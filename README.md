@@ -42,3 +42,25 @@ Kai programa naudoja deque konteinerį, šis konteineris dirba lėčiausiai iš 
 ![v0.5 Palyginimui darbas su list](List.png)
 
 Kai programa naudoja List konteinerį, ji skaito failus lėčiau nei vektor konteineris, bet duomenis skirsto į dvi grupes greičiau.
+
+
+## v1.0
+
+Šioje versijoje buvo bandoma optimizuoti programą naudojant įvairias strategijas. Viena iš jų - sukurti du atskirus konteinerius, vienas kietiakams, kitas vargšiukams. Kita strategija sukurti tik vieną konteinerį - kietiakai. Tada gauname atskirtus kietiakus, kurių vidurkis didesnis arba lygus penkiems. O studentų konteineryje lieka vargšiukai, kurių galutinis balas prastesnis. 
+Čia bus palyginama pirma su antra strategijos.
+
+### Strategijų palyginimas su Vektoriais
+![](Vstrrategy.png)
+
+
+### Strategijų palyginimas su Deque
+![](Dstrrategy.png)
+
+### Strategijų palyginimas su List
+![](Lstrrategy.png)
+
+Matome, kad visais atvejais 2 strategija dirba veikia ilgiau nei pirma strategija
+
+## Naudojimosi instrukcija
+
+Parsisiųsti failus, įsijungti UNIX. Terminale parašyti make ir atidaryti makefile, baigus parašyti make clean.
