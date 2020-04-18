@@ -11,11 +11,11 @@ void rikiavimas(deque <studentai> mok, int failoSK) //rikiavimo funkcija
 
         for(int i=0;i<failoSK-1;i++)
         for(int j=i+1;j<failoSK;j++)
-            if(mok[i].galutinis>mok[j].galutinis)
+            if(mok[i].GetGalutinis()>mok[j].GetGalutinis())
             {
                 swap(mok[i], mok[j]);
             }
 }
-bool lyginimas(const studentai& a, const studentai& b){
-    return a.galutinis < b.galutinis;
+bool lyginimas(studentai& a, studentai& b){
+    return a.GetGalutinis() > b.GetGalutinis();
 }

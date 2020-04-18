@@ -65,7 +65,11 @@ int main ()
         for(int i=0;i<failoSK;i++)
         {
             mok.push_back(studentai());
-            InFile>>mok[i].vardas>>mok[i].pavarde;
+            string vardas1, pavarde1;
+            InFile>>vardas1>>pavarde1;
+            mok[i].SetVardas(vardas1);
+            mok[i].SetPavarde(pavarde1);
+
            // cout<<mok[i].vardas<<endl;
 
             for(int t=0;t<5;t++)
@@ -74,7 +78,9 @@ int main ()
                 suma+=paz;
             }
             InFile>>egz;
-            mok[i].galutinis=((1.0*suma/5)*0.4)+(0.6*egz);
+            double skaicius;
+            skaicius=((1.0*suma/5)*0.4)+(0.6*egz);
+            mok[i].SetGalutinis(skaicius);
            // cout<<mok[i].galutinis<<endl;
             suma=0;
 
@@ -94,18 +100,23 @@ int main ()
 
 
             //cout<<mok[i].vardas<<endl;
-                if(mok[i].galutinis >=5.0)
+                if(mok[i].GetGalutinis() >=5.0)
                 {
                     kietiakai.push_back(studentai());
-                    kietiakai[sk].vardas=mok[i].vardas;
-                    kietiakai[sk].pavarde=mok[i].pavarde;
-                    kietiakai[sk].galutinis=mok[i].galutinis;
+                    string kvardas, kpavarde;
+                    double kgalutinis;
+                    kvardas=mok[i].GetVardas();
+                    kpavarde=mok[i].GetPavarde();
+                    kgalutinis=mok[i].GetGalutinis();
+                    kietiakai[sk].SetVardas(kvardas);
+                    kietiakai[sk].SetPavarde(kpavarde);
+                    kietiakai[sk].SetGalutinis(kgalutinis);
                     outFile.width(15);
-                    outFile<<kietiakai[sk].vardas;
+                    outFile<<kietiakai[sk].GetVardas();
                     outFile.width(15);
-                    outFile<<kietiakai[sk].pavarde;
+                    outFile<<kietiakai[sk].GetPavarde();
                     outFile.width(15);
-                    outFile<<kietiakai[sk].galutinis<<endl;
+                    outFile<<kietiakai[sk].GetGalutinis()<<endl;
                 //cout<<" "<<mok[i].galutinis<<endl;
                     sk++;
                 }
@@ -129,11 +140,11 @@ int main ()
 
 
                     outFile.width(15);
-                    outFile<<mok[i].vardas;
+                    outFile<<mok[i].GetVardas();
                     outFile.width(15);
-                    outFile<<mok[i].pavarde;
+                    outFile<<mok[i].GetPavarde();
                     outFile.width(15);
-                    outFile<<mok[i].galutinis<<endl;
+                    outFile<<mok[i].GetGalutinis()<<endl;
                 //cout<<" "<<mok[i].galutinis<<endl;
                 ks++;
 

@@ -64,7 +64,11 @@ int main ()
         InFile>>nereikalingas>>nereikalingas>>nereikalingas>>nereikalingas>>nereikalingas>>nereikalingas>>nereikalingas>>nereikalingas;
         for(int i=0;i<failoSK;i++)
         {
-            InFile>>st.vardas>>st.pavarde;
+            string vardas1, pavarde1;
+
+            InFile>>vardas1>>pavarde1;
+            st.SetVardas(vardas1);
+            st.SetPavarde(pavarde1);
            // cout<<mok[i].vardas<<endl;
 
             for(int t=0;t<5;t++)
@@ -72,8 +76,10 @@ int main ()
                 InFile>>paz;
                 suma+=paz;
             }
+            double galutinis1;
             InFile>>egz;
-            st.galutinis=((1.0*suma/5)*0.4)+(0.6*egz);
+            galutinis1=((1.0*suma/5)*0.4)+(0.6*egz);
+            st.SetGalutinis(galutinis1);
            // cout<<mok[i].galutinis<<endl;
             suma=0;
             mok.push_back(st);
@@ -90,15 +96,15 @@ int main ()
         int sk;
         for(std::list<studentai>::iterator it = mok.begin(); it != mok.end(); it++)
         {
-                if((it)->galutinis >= 5.0)
+                if((it)->GetGalutinis() >= 5.0)
                 {
                     kietiakai.push_back(*it);
                     outFile.width(15);
-                outFile<<(it)->vardas;
+                outFile<<(it)->GetVardas();
                 outFile.width(15);
-                outFile<<(it)->pavarde;
+                outFile<<(it)->GetPavarde();
                 outFile.width(15);
-                outFile<<(it)->galutinis<<endl;
+                outFile<<(it)->GetGalutinis()<<endl;
                 sk++;
                 }
 
@@ -116,11 +122,11 @@ int main ()
         for(std::list<studentai>::iterator it = mok.begin(); it != mok.end(); it++)
         {
                     outFile.width(15);
-                outFile<<(it)->vardas;
+                outFile<<(it)->GetVardas();
                 outFile.width(15);
-                outFile<<(it)->pavarde;
+                outFile<<(it)->GetPavarde();
                 outFile.width(15);
-                outFile<<(it)->galutinis<<endl;
+                outFile<<(it)->GetGalutinis()<<endl;
         }
         outFile.close();
         end2 = clock();
