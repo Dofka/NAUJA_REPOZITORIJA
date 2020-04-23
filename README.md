@@ -61,6 +61,11 @@ Kai programa naudoja List konteinerį, ji skaito failus lėčiau nei vektor kont
 
 Matome, kad visais atvejais 2 strategija dirba veikia ilgiau nei pirma strategija
 
+## v1.1
+![](LyginimasV.png)
+
+
+
 ## Naudojimosi instrukcija
 
 Parsisiųsti failus, įsijungti UNIX. Terminale parašyti make ir atidaryti makefile, baigus parašyti make clean.
