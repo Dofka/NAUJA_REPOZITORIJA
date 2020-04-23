@@ -64,7 +64,8 @@ Matome, kad visais atvejais 2 strategija dirba veikia ilgiau nei pirma strategij
 ## v1.1
 ![](LyginimasV.png)
 
-
+Šioje užduotyje reikėjo panaudoti class vietoj struct, panaudojus class veikimo laikas šiek tiek paletėjo.
+Labiausiai tinkantis optimizavimo flagas buvo -O1, nes jis skaitė greičiausiai ir jo veikimo laikas trumpiausias, labai nedaug atsiliko -O3, nes jis skaitė lėčiau, bet skirstė greičiau.
 
 ## Naudojimosi instrukcija
 
