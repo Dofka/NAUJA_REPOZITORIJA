@@ -1,171 +1,158 @@
 #include "header.h"
 
-using namespace std;
-
-int main()
+int main ()
 {
-    vector<mokinys> mok;
-    double zmone, egz,paza;
-    int zmones;
-    int pasirinkimas, pasirinkimas_spausdinimo;
-    int randas;
-    int paz;
-    int skaic;
-    int medsk;
-    int medvid;
-    string tuscia;
-    std::cout<<"Norite skaityti failą(1) ar ivesti ranka(0)"<<endl;
-    std::cin>>pasirinkimas_spausdinimo;
-        while(std::cin.fail())
+    ifstream InFile;
+    ofstream outFile;
+    int Number_of_files=5;
+    string filename, nereikalingas;
+    int failoSK=1000;
+    int k, paz, egz, suma=0;
+    vector <studentai> mok;
+    vector <studentai> kietiakai;
+    vector <studentai> vargsiukai;
+
+  for (int i=0;i<Number_of_files;i++)
+  {
+      clock_t startB, endB;
+        startB = clock();
+        filename="file_" + IntToStr(failoSK) +".txt";
+
+        cout<< filename << "  \n";
+
+        outFile.open(filename.c_str());
+        outFile.width(15);
+        outFile<<"Vardas";
+        outFile.width(15);
+        outFile<<"Pavarde";
+        outFile.width(15);
+        outFile<<"ND1";
+        outFile.width(15);
+        outFile<<"ND2";
+        outFile.width(15);
+        outFile<<"ND3";
+        outFile.width(15);
+        outFile<<"ND4";
+         outFile.width(15);
+        outFile<<"ND5";
+         outFile.width(15);
+        outFile<<"Egz."<<endl;;
+        for(int i=0;i<failoSK;i++)
         {
-        std::cin.clear();
-        std::cin.ignore(10000,'\n');
-        std::cout << "Blogas pasirinkimas. Bandykite dar karta ";
-        std::cin >> pasirinkimas_spausdinimo;
-        }
-        //Is failo
-        //*****************************************************************************************************8
-        if(pasirinkimas_spausdinimo==1)
-        {
+            outFile.width(15);
+            outFile<<"Vardenis"<<i+1;
+            outFile.width(15);
+            outFile<<"Pavardenis"<<i+1;
 
-            skaitymas(mok);
-        }
+            for(int i=0;i<5;i++)
+            {
+                k = rand()%11;
+                outFile.width(15);
+                outFile<<k;
+            }
+            k = rand()%11;
+            outFile.width(15);
+            outFile<<k;
+            outFile<<endl;
 
-
-
-
-
-
-
-
-
-        //*********************************************************************************************************************************************
-        //Is failo pabaiga
-        else
-        {
-            std::cout<<"Iveskite mokiniu skaiciu"<<std::endl;
-                                std::cin>>zmone;
-                                while(std::cin.fail() || zmone==0 || zmone!=(int)zmone)
-                                {
-                                    std::cin.clear();
-                                    std::cin.ignore(10000,'\n');
-                                    std::cout << "Ivyko klaida.  Iveskite skaiciu: ";
-                                    std::cin >> zmone;
-                                }
-                                zmones = (int)zmone;
-                                mokinys studentas[zmones];
-                                std::cout<<"galutini skaiciuoti palei mediana(iveskite 1) ar palei namu darbus (iveskite 0)"<<std::endl;
-                                std::cin>>pasirinkimas;
-                                while(std::cin.fail() || pasirinkimas>1 || pasirinkimas<0)
-                            {
-                                std::cin.clear();
-                                std::cin.ignore(10000,'\n');
-                                std::cout << "Blogas pasirinkimas. Bandykite dar karta ";
-                                std::cin >> zmones;
-                            }
-                                for(int i=0;i<zmones;i++)
-                                {
-                                    std::cout<<"Mokinio vardas:"<<std::endl;
-                                    std::cin>>studentas[i].vardas;
-                                    std::cout<<"Mokinio pavarde:"<<std::endl;
-                                    std::cin>>studentas[i].pavarde;
-                                    std::cout<<"Random(1) ar ne(0)"<<std::endl;
-                                    std::cin>>randas;
-                                    while(randas!=1 && randas!=0)
-                                    {
-                                        std::cin.clear();
-                                        std::cin.ignore(10000,'\n');
-                                        std::cout<<"Blogas pasirinkimas"<<std::endl;
-                                        std::cin>>randas;
-                                    }
-                                    if(randas==1)
-                                    {
-                                        studentas[i].egz=rand() % 11;
-                                        int kiek=rand() % 101;
-                                        for(int u=0;u<kiek;u++)
-                                        {
-                                            paz=rand()%11;
-                                            skaic=studentas[i].n;
-                                            studentas[i].v.push_back(paz);
-                                            studentas[i].suma=studentas[i].suma+paz;
-                                            studentas[i].n++;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        std::cout<<"Egzamino ivertinimas:"<<std::endl;
-                                        std::cin>>egz;
-                                    while(std::cin.fail() || egz>10 || egz<0 || egz!=(int)egz)
-                                    {
-                                    std::cin.clear();
-                                    std::cin.ignore(10000,'\n');
-                                    std::cout << "Ivyko klaida.  Iveskite skaiciu(0-10): ";
-                                    std::cin >> egz;
-                                    }
-                                    studentas[i].egz=(int)egz;
-                                    std::cout<<"Iveskite namu darbu ivertinimus (jei baigete rasykite -1)"<<std::endl;
-                                    while(true)
-                                    {
-                                        std::cin>>paza;
-                                        while(std::cin.fail()||paza>10||paza<-1, paza!=(int)paza)
-                                        {
-                                            std::cin.clear();
-                                            std::cin.ignore(10000,'\n');
-                                            std::cout << "Blogai. Iveskite namu darbu ivertinimus (jei baigete rasykite -1)";
-                                            std::cin >> paza;
-                                        }
-                                      if(paza==-1)
-                                            break;
-                                      else
-                                      {
-                                          skaic=studentas[i].n;
-                                          studentas[i].v.push_back(paza);
-                                          studentas[i].suma=studentas[i].suma+paza;
-                                          studentas[i].n++;
-                                      }
-
-                                    }
-                                    }
-
-                                    studentas[i].vidurkis=studentas[i].suma/studentas[i].n;
-                                    if(pasirinkimas == 0)
-                                    {
-                                        studentas[i].galutinis=(0.4*studentas[i].vidurkis)+(0.6*studentas[i].egz);
-                                    }
-                                    else
-                                    {
-                                        rikiavimas(studentas,zmones);
-                                        if(studentas[i].n%2==0)
-                                        {
-                                            medvid=studentas[i].n/2;
-                                            studentas[i].galutinis = 0.4*(1.0*(studentas[i].v[medvid-1]+studentas[i].v[medvid])/2)+0.6*studentas[i].egz;
-                                        }
-                                        else
-                                        {
-                                            medvid=studentas[i].n/2+1;
-                                            studentas[i].galutinis = 0.4*(studentas[i].v[medvid-1])+0.6*(studentas[i].egz);
-
-                                        }
-                                    }
-
-
-                                }
-
-
-
-
-
-
-                                std::cout<<"Vardas                 Pavarde              Galutinis Ivertinimas"<<std::endl;
-                                for(int i=0;i<zmones;i++)
-                                {
-                                    std::cout<<studentas[i].vardas<<"           "<<studentas[i].pavarde<<"             "<<std::fixed<<std::setprecision(2)<<studentas[i].galutinis<<std::endl;
-                                }
         }
 
+        outFile.close();
+        InFile.open(filename.c_str());
+        clock_t start, end;
+        start = clock();
+        InFile>>nereikalingas>>nereikalingas>>nereikalingas>>nereikalingas>>nereikalingas>>nereikalingas>>nereikalingas>>nereikalingas;
+        for(int i=0;i<failoSK;i++)
+        {
+            mok.push_back(studentai());
+            string vardas1, pavarde1;
+            InFile>>vardas1>>pavarde1;
+            mok[i].SetVardas(vardas1);
+            mok[i].SetPavarde(pavarde1);
+
+           // cout<<mok[i].vardas<<endl;
+
+            for(int t=0;t<5;t++)
+            {
+                InFile>>paz;
+                suma+=paz;
+            }
+            InFile>>egz;
+            double skaicius;
+            skaicius=((1.0*suma/5)*0.4)+(0.6*egz);
+            mok[i].SetGalutinis(skaicius);
+           // cout<<mok[i].galutinis<<endl;
+            suma=0;
 
 
-return 0;
+        }
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout <<failoSK<<" nuskaityti failus uztruko: "<< time_taken<< " s"<<endl;
+        sort(mok.begin(),mok.end(),lyginimas);
+        clock_t start1, end1;
+        start1 = clock();
+        filename="file_" + IntToStr(failoSK) +"kietiakai" + ".txt";
+        outFile.open(filename.c_str());
+       int sk=0;
+        for(int i=0;i<failoSK;i++)
+        {
+
+
+            //cout<<mok[i].vardas<<endl;
+                if(mok[i].GetGalutinis() >=5.0)
+                {
+                    kietiakai.push_back(studentai());
+                    string kvardas, kpavarde;
+                    double kgalutinis;
+                    kvardas=mok[i].GetVardas();
+                    kpavarde=mok[i].GetPavarde();
+                    kgalutinis=mok[i].GetGalutinis();
+                    kietiakai[sk].SetVardas(kvardas);
+                    kietiakai[sk].SetPavarde(kpavarde);
+                    kietiakai[sk].SetGalutinis(kgalutinis);
+                    outFile<<kietiakai[sk];
+                //cout<<" "<<mok[i].galutinis<<endl;
+                    sk++;
+                }
+
+
+        }
+        mok.resize(failoSK-sk);
+        int failas=failoSK-sk;
+        outFile.close();
+        end1 = clock();
+        double time_taken1 = double(end1 - start1) / double(CLOCKS_PER_SEC);
+        cout <<failoSK<<" Isskirti i grupe kieti uztruko: "<< time_taken1<< " s"<<endl;
+        clock_t start2, end2;
+        start2 = clock();
+
+        filename="file_" + IntToStr(failoSK) +"vargsiukai" + ".txt";
+        outFile.open(filename.c_str());
+          int ks=0;
+        for (int i = 0; i<failas; i++)
+        {
+
+
+                    outFile<<mok[i];
+                //cout<<" "<<mok[i].galutinis<<endl;
+                ks++;
+
+
+        }
+        outFile.close();
+        end2 = clock();
+        double time_taken2 = double(end2 - start2) / double(CLOCKS_PER_SEC);
+        cout <<failoSK<<" Isskirti i grupe nepasisekeliai uztruko: "<< time_taken2<< " s"<<endl;
+        failoSK=failoSK*10;
+        cout<<"veikia"<<endl;
+
+        InFile.close();
+        endB = clock();
+        double time_takenB = double(endB - startB) / double(CLOCKS_PER_SEC);
+        cout <<failoSK<<" BENDRAS VEIKIMAS "<< time_takenB<< " s"<<endl;
+  }
+
+
+  return 0;
 }
-
-

@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1588530520 source:c:\users\dzovi\onedrive\desktop\procedurinis\l_strategy2\header.cpp
+	"header.h"
+
+1588530502 c:\users\dzovi\onedrive\desktop\procedurinis\l_strategy2\header.h
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+	<deque>
+	<algorithm>
+	<time.h>
+	<iterator>
+	<list>
+
+1588530092 source:c:\users\dzovi\onedrive\desktop\procedurinis\l_strategy2\main.cpp
+	"header.h"
+
