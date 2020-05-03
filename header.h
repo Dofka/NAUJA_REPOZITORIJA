@@ -1,25 +1,50 @@
+#ifndef HEADER_H_INCLUDED
+#define HEADER_H_INCLUDED
+
 #include <iostream>
-#include <bits/stdc++.h>
-#include <vector>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <deque>
 #include <algorithm>
+#include <time.h>
+#include<iterator>
+#include<vector>
 
 using namespace std;
 
-struct mokinys{
-std::string vardas,pavarde;
-std::vector<int> v={};
-int n=0;
-int egz;
-int suma=0;
-float vidurkis;
-float mediana;
-double galutinis;
+
+class studentai
+{
+    private:
+    string vardas_;
+    string pavarde_;
+    double galutinis_;
+    public:
+        void SetVardas(string s){
+            vardas_ = s;
+        }
+        string GetVardas()const{
+            return vardas_;
+        }
+        void SetPavarde(string a){
+            pavarde_ = a;
+        }
+        string GetPavarde()const{
+            return pavarde_;
+        }
+        void SetGalutinis(double d){
+            galutinis_ = d;
+        }
+        double GetGalutinis()const{
+            return galutinis_;
+        }
+studentai& operator=(const studentai& mok);
+
 };
-void rikiavimas(mokinys studentas[], int zmones);
-void rikiavimas1(vector <int> M, int nd);
-bool lyginimas(const mokinys& a, const mokinys& b);
-double mediana(vector<int>M, int masyvod);
-void skaitymas(vector <mokinys> mok);
+string IntToStr(int n);
+void rikiavimas(vector <studentai> mok, int failoSK); //rikiavimo funkcija
+bool lyginimas( studentai& a,  studentai& b);
+ofstream& operator << (ofstream& os, const studentai& mok);
 
-
-
+#endif // HEADER_H_INCLUDED
