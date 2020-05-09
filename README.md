@@ -67,6 +67,11 @@ Matome, kad visais atvejais 2 strategija dirba veikia ilgiau nei pirma strategij
 Šioje užduotyje reikėjo panaudoti class vietoj struct, panaudojus class veikimo laikas šiek tiek paletėjo.
 Labiausiai tinkantis optimizavimo flagas buvo -O1, nes jis skaitė greičiausiai ir jo veikimo laikas trumpiausias, labai nedaug atsiliko -O3, nes jis skaitė lėčiau, bet skirstė greičiau.
 
+## v1.5
+
+Šioje versijoje reikėjo sukurti išvestinę klasę ir bazinę.
+
 ## Naudojimosi instrukcija
 
 Parsisiųsti failus, įsijungti UNIX. Terminale parašyti make ir atidaryti makefile, baigus parašyti make clean.
+
