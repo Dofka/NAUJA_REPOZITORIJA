@@ -14,33 +14,29 @@
 using namespace std;
 
 
-class studentai
+class zmones
 {
-    private:
+    protected:
     string vardas_;
     string pavarde_;
-    double galutinis_;
-    public:
-        void SetVardas(string s){
-            vardas_ = s;
-        }
-        string GetVardas()const{
-            return vardas_;
-        }
-        void SetPavarde(string a){
-            pavarde_ = a;
-        }
-        string GetPavarde()const{
-            return pavarde_;
-        }
-        void SetGalutinis(double d){
-            galutinis_ = d;
-        }
-        double GetGalutinis()const{
-            return galutinis_;
-        }
-studentai& operator=(const studentai& mok);
 
+    public:
+        void virtual SetVardas(string s){vardas_ = s;}
+        string virtual GetVardas()const{return vardas_;}
+        void virtual SetPavarde(string a){pavarde_ = a;}
+        string virtual GetPavarde()const{return pavarde_;}
+
+
+
+};
+class studentai : public zmones
+{
+    private:
+        double galutinis_;
+    public:
+        void SetGalutinis(double d){galutinis_ = d;}
+        double GetGalutinis()const{return galutinis_;}
+        studentai& operator=(const studentai& mok);
 };
 string IntToStr(int n);
 void rikiavimas(vector <studentai> mok, int failoSK); //rikiavimo funkcija
