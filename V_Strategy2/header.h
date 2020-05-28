@@ -1,25 +1,48 @@
-#ifndef VSTRATEGY2_H_INCLUDED
-#define VSTRATEGY2_H_INCLUDED
+#ifndef HEADER_H_INCLUDED
+#define HEADER_H_INCLUDED
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
-#include <vector>
+#include <deque>
 #include <algorithm>
 #include <time.h>
 #include<iterator>
+#include<vector>
 
 using namespace std;
 
 string IntToStr(int n);
-struct studentai
+class studentai
 {
-    string vardas, pavarde;
-    double galutinis;
+    private:
+    string vardas_;
+    string pavarde_;
+    double galutinis_;
+    public:
+        void SetVardas(string s){
+            vardas_ = s;
+        }
+        string GetVardas(){
+            return vardas_;
+        }
+        void SetPavarde(string a){
+            pavarde_ = a;
+        }
+        string GetPavarde(){
+            return pavarde_;
+        }
+        void SetGalutinis(double d){
+            galutinis_ = d;
+        }
+        double GetGalutinis(){
+            return galutinis_;
+        }
+
+
 };
+void rikiavimas(vector <studentai> mok, int failoSK); //rikiavimo funkcija
+bool lyginimas( studentai& a,  studentai& b);
 
-void rikiavimas(vector <studentai> mok, int failoSK);
-bool lyginimas(const studentai& a, const studentai& b);
-
-#endif // VSTRATEGY2_H_INCLUDED
+#endif // HEADER_H_INCLUDED

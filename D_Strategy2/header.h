@@ -13,12 +13,35 @@
 using namespace std;
 
 string IntToStr(int n);
-struct studentai
+class studentai
 {
-    string vardas, pavarde;
-    double galutinis;
+    private:
+    string vardas_;
+    string pavarde_;
+    double galutinis_;
+    public:
+        void SetVardas(string s){
+            vardas_ = s;
+        }
+        string GetVardas(){
+            return vardas_;
+        }
+        void SetPavarde(string a){
+            pavarde_ = a;
+        }
+        string GetPavarde(){
+            return pavarde_;
+        }
+        void SetGalutinis(double d){
+            galutinis_ = d;
+        }
+        double GetGalutinis(){
+            return galutinis_;
+        }
+
+
 };
 void rikiavimas(deque <studentai> mok, int failoSK); //rikiavimo funkcija
-bool lyginimas(const studentai& a, const studentai& b);
+bool lyginimas( studentai& a,  studentai& b);
 
 #endif // HEADER_H_INCLUDED
